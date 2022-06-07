@@ -1,3 +1,8 @@
+# Ignore source datafile over 100MG
+# Over Git Hub size limit
+Data/GVA13_18.csv
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
