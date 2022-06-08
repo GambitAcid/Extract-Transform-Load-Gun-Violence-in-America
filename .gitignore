@@ -2,6 +2,8 @@
 # Over Git Hub size limit
 Data/GVA13_18.csv
 
+# Ignore config
+GunViolence/config.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
