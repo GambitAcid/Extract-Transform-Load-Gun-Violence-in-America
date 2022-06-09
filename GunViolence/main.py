@@ -17,14 +17,80 @@ if not database_exists(cestring):
 else:
     # Connect the database if exists.
     connection = engine.connect()
-metadata = db.MetaData()
+    metadata = db.MetaData()
 
 # GVA data from Gun Violence Archive Data
 get_GVA = "../Data/GVA13_18.csv"
 GVA_data = pd.read_csv(get_GVA)
 
-# Working copy of GVA data. 
+# FBI NICS data from FBI 
+get_FBI = "../FBI_NICS_Data/FBI_NICs_Data.csv
+FBI_data = pd.read_csv(get_FBI)
+
+# Working copy of GVA and FBI data. 
 GVA = pd.DataFrame(GVA_data)
+FBI = pd.DataFrame(FBI_data)
+
+ColumnsNICS = ['month',
+           'state', 
+           'permit', 
+           'permit_recheck', 
+           'handgun', 
+           'long_gun',
+           'other',
+           'multiple',
+           'admin', 
+           'prepawn_handgun',
+           'prepawn_long_gun',
+           'prepawn_other', 
+           'redemption_handgun',
+           'redemption_long_gun',
+           'redemption_other',
+           'returned_handgun', 
+           'returned_long_gun',
+           'returned_other',
+           'rentals_handgun',
+           'rentals_long_gun',
+           'private_sale_handgun',
+           'private_sale_long_gun',
+           'private_sale_other',
+           'return_to_seller_handgun',
+           'return_to_seller_long_gun',
+           'return_to_seller_other',
+           'totals'
+          ]
+
+NICSNew =['month' : 'Month',
+           'state': 'State',
+           'permit': 'Permit',
+           'permit_recheck', 'Permit_Recheck',
+           'handgun': 'Handgun',
+           'long_gun': 'Long_Gun', 
+           'other': 'Other', 
+           'multiple': 'Multiple',
+           'admin' : 'Admin', 
+           'prepawn_handgun': 'PrePawn_Handgun',
+           'prepawn_long_gun':  'Pre_Pawn_Long_Gun',
+           'prepawn_other': 'Prepawn_Other',
+           'redemption_handgun': 'Redemption_Handgun',
+           'redemption_long_gun':'Redemption_Long_Gun',
+           'redemption_other': 'Redemption_Other',
+           'returned_handgun': 'Returned_Handgun',
+           'returned_long_gun':'Returned_Long_Gun',
+           'returned_other': 'Returned_Other',
+           'rentals_handgun':'Rentals_Handgun',
+           'rentals_long_gun':'Rentals_Long_Gun',
+           'private_sale_handgun':'Private_Sale_Handgun',
+           'private_sale_other':'Private_Sale_Other',
+           'return_to_seller_handgun':'Return_To_Seller_Handgun',
+           'return_to_seller_long_gun':'Return_To_Seller_Long_Gun',
+           'return_to_seller_other': 'Return_To_Seller_Other',
+           'totals': 'Totals'
+          ]
+
+FBIIncidAll = FBI=[Columns].rename(columns=NICSNew).set_index('IncidentID')
+FBIIncidAll.index.rename('NICsChecksID', inplace=True)
+FBIIncidAll.to_sql('NICsChecks', engine, index=True, if_exists='replace')
 
 # Definition of Incident table and write to DB
 Columns = ['incident_id',
