@@ -31,6 +31,7 @@ FBI_data = pd.read_csv(get_FBI)
 GVA = pd.DataFrame(GVA_data)
 FBI = pd.DataFrame(FBI_data)
 
+# Definition of FBI table and write to DB
 Columns = ['month',
            'state', 
            'permit', 
@@ -59,7 +60,6 @@ Columns = ['month',
            'return_to_seller_other',
            'totals'
           ]
-
 NewNames = {'month' : 'Month',
            'state': 'State',
            'permit': 'Permit',
@@ -91,11 +91,6 @@ NewNames = {'month' : 'Month',
 FBIIncidAll = FBI[Columns].rename(columns=NewNames)
 FBIIncidAll.index.rename('NICsChecksID', inplace=True)
 FBIIncidAll.to_sql('NICsChecks', engine, index=True, if_exists='replace')
-
-
-# Working copy of GVA and FBI data. 
-GVA = pd.DataFrame(GVA_data)
-FBI = pd.DataFrame(FBI_data)
 
 # Definition of Incident table and write to DB
 Columns = ['incident_id',
