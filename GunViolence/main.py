@@ -24,14 +24,14 @@ get_GVA = "../Data/GVA13_18.csv"
 GVA_data = pd.read_csv(get_GVA)
 
 # FBI NICS data from FBI 
-get_FBI = "../FBI_NICS_Data/FBI_NICs_Data.csv
+get_FBI = "../Data/FBI_NICs_Data.csv"
 FBI_data = pd.read_csv(get_FBI)
 
 # Working copy of GVA and FBI data. 
 GVA = pd.DataFrame(GVA_data)
 FBI = pd.DataFrame(FBI_data)
 
-ColumnsNICS = ['month',
+Columns = ['month',
            'state', 
            'permit', 
            'permit_recheck', 
@@ -60,10 +60,10 @@ ColumnsNICS = ['month',
            'totals'
           ]
 
-NICSNew =['month' : 'Month',
+NewNames = {'month' : 'Month',
            'state': 'State',
            'permit': 'Permit',
-           'permit_recheck', 'Permit_Recheck',
+           'permit_recheck': 'Permit_Recheck',
            'handgun': 'Handgun',
            'long_gun': 'Long_Gun', 
            'other': 'Other', 
@@ -86,11 +86,16 @@ NICSNew =['month' : 'Month',
            'return_to_seller_long_gun':'Return_To_Seller_Long_Gun',
            'return_to_seller_other': 'Return_To_Seller_Other',
            'totals': 'Totals'
-          ]
+        }
 
-FBIIncidAll = FBI=[Columns].rename(columns=NICSNew).set_index('IncidentID')
+FBIIncidAll = FBI[Columns].rename(columns=NewNames)
 FBIIncidAll.index.rename('NICsChecksID', inplace=True)
 FBIIncidAll.to_sql('NICsChecks', engine, index=True, if_exists='replace')
+
+
+# Working copy of GVA and FBI data. 
+GVA = pd.DataFrame(GVA_data)
+FBI = pd.DataFrame(FBI_data)
 
 # Definition of Incident table and write to DB
 Columns = ['incident_id',
