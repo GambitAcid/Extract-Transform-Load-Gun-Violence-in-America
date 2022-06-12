@@ -15,17 +15,19 @@ We imported .csv datasets from the following data sources:
 
 •	Gun Violence Archive- https://www.kaggle.com/datasets/gunviolencearchive/gun-violence-database
 
-     This website had accidental injuries, accidental deaths, mass shootings, by year, or you ccould view all. 
+     This website had accidental injuries, accidental deaths, and mass shootings. 
 
 •	NICS Firearm Background Checks-https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view
 
      This dataset was originally in PDF format and was converted to .csv. 
       
-•	Mass Shootings- https://www.gunviolencearchive.org/reports (mass shootings ALL, accidental deaths ALL) Reform.
+•	Mass Shootings- https://www.gunviolencearchive.org/reports 
+     
+     Mass shootings ALL, Accidental deaths ALL Reform.
 
- <p align="center">       
+      
 ![gvy](https://user-images.githubusercontent.com/101227638/173213088-534522cf-e194-4e59-9ee2-1fa302f37909.png) align="center"
-</p>
+
 
 **Transform-** 
 Data cleaning involved: transformation of data columns into datetime, filtering to limit the data to the time period we wanted to examine (2016), selecting the columns relevant to future analysis, changing formatting for ease of use and legibility, and serializing the data.  
