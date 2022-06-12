@@ -9,13 +9,18 @@ Future analysis could provide insight into states that may need better gun safet
 
 Extract- 
 We imported .csv datasets from the following data sources: 
+
 •	Gun Violence Archive- https://www.kaggle.com/datasets/gunviolencearchive/gun-violence-database
+
 •	NICS Firearm Background Checks-https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view
+
       * This dataset was originally in PDF format and was converted to .csv. 
+      
 •	Mass Shootings- https://www.gunviolencearchive.org/reports (mass shootings ALL, accidental deaths ALL) Reform.
+
       * We attempted to scrape data from this website; however, the data was un-scrapable
 
-![](images/Gun Violence ETL.svg)
+<img src="images/Gun Violence ETL.svg"
 
 Transform- 
 Data cleaning involved: transformation of data columns into datetime, filtering to limit the data to the time period we wanted to examine (2016), selecting the columns relevant to future analysis, changing formatting for ease of use and legibility, and serializing the data.  
