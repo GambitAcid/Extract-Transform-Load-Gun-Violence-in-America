@@ -8,6 +8,7 @@ This Case Study Project demonstrates the Extract, Transform, Load (ETL) process.
 Future analysis could provide insight into states that may need better gun safety and training due to frequency of accidental discharges resulting in injuries and/or death.  Analyses of interest are found in the Technical Report.
 
 
+
 ![gvetl](https://user-images.githubusercontent.com/101227638/173212862-3b0403e4-86ea-454c-bf0d-2f3a8badc336.png)
 
 **Extract-** 
@@ -40,7 +41,9 @@ We then loaded the results into four Postgres Tables: FBI NICS, Incidents, Parti
 
 ![gvpost](https://user-images.githubusercontent.com/101227638/173212929-4c309401-d093-4c8c-9908-d61b37741264.png)
 
-Please reference the included “Gun Violence ETL.png” for a visualization of this overall process.  Please also reference the included “Technical Report” for a more detailed explanations.
+
+
+Please “Technical Report” for a more detailed information, visuals and explanations.
 
 
 OurWBS was as follows:
