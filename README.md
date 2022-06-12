@@ -7,10 +7,15 @@ This Case Study Project demonstrates the Extract, Transform, Load (ETL) process.
 
 Future analysis could provide insight into states that may need better gun safety and training due to frequency of accidental discharges resulting in injuries and/or death.  Analyses of interest are found in the Technical Report.
 
+
+![gvetl](https://user-images.githubusercontent.com/101227638/173212862-3b0403e4-86ea-454c-bf0d-2f3a8badc336.png)
+
 Extract- 
 We imported .csv datasets from the following data sources: 
 
 •	Gun Violence Archive- https://www.kaggle.com/datasets/gunviolencearchive/gun-violence-database
+
+      * This website had accidental injuries, accidental deaths, mass shootings, by year, or you ccould view all. 
 
 •	NICS Firearm Background Checks-https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view
 
@@ -20,7 +25,6 @@ We imported .csv datasets from the following data sources:
 
       * We attempted to scrape data from this website; however, the data was un-scrapable
 
-<img src="images/Gun Violence ETL.svg"
 
 Transform- 
 Data cleaning involved: transformation of data columns into datetime, filtering to limit the data to the time period we wanted to examine (2016), selecting the columns relevant to future analysis, changing formatting for ease of use and legibility, and serializing the data.  
@@ -38,4 +42,3 @@ OurWBS was as follows:
 •	Transform the data, combine, and store into a dataframe.
 •	Load the data with the local databases and check tables into PostgreSQL.
 •	Load the data with local database and check tables into and join with PostgreSQL in PgAdmin.
-
