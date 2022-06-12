@@ -1,5 +1,8 @@
-# Project Two- Extract, Transform, and Load (ETL): Data on Shootings and Gun Violence in America
-Group Members: Lynne Freilich, Ronnie Phillips, Corban Doran
+# Project Two- Extract, Transform, and Load (ETL): Gun Violence in America
+
+![gvetl](https://user-images.githubusercontent.com/101227638/173212862-3b0403e4-86ea-454c-bf0d-2f3a8badc336.png)
+
+**Group Members:** Lynne Freilich, Ronnie Phillips, Corban Doran
 Due: Saturday June 11th, 2022
 
 **Project Outline Overview:** 
@@ -8,42 +11,39 @@ This Case Study Project demonstrates the Extract, Transform, Load (ETL) process.
 Future analysis could provide insight into states that may need better gun safety and training due to frequency of accidental discharges resulting in injuries and/or death.  Analyses of interest are found in the Technical Report.
 
 
-
-![gvetl](https://user-images.githubusercontent.com/101227638/173212862-3b0403e4-86ea-454c-bf0d-2f3a8badc336.png)
-
 **Extract-** 
 We imported .csv datasets from the following data sources: 
 
 •	Gun Violence Archive- https://www.kaggle.com/datasets/gunviolencearchive/gun-violence-database
 
-     This website had accidental injuries, accidental deaths, and mass shootings. 
+     Website included accidental injuries & accidental deaths. 
 
 •	NICS Firearm Background Checks-https://www.fbi.gov/file-repository/nics_firearm_checks_-_month_year_by_state_type.pdf/view
 
-     This dataset was originally in PDF format and was converted to .csv. 
+     This dataset was originally in PDF format and was converted to CSV.
       
 •	Mass Shootings- https://www.gunviolencearchive.org/reports 
      
-     Mass shootings ALL, Accidental deaths ALL Reform.
+     Includes ALL Mass shootings & ALL Accidental deaths.
 
       
-![gvy](https://user-images.githubusercontent.com/101227638/173213088-534522cf-e194-4e59-9ee2-1fa302f37909.png) align="center"
-
+![gvy](https://user-images.githubusercontent.com/101227638/173213088-534522cf-e194-4e59-9ee2-1fa302f37909.png) 
+    
 
 **Transform-** 
 Data cleaning involved: transformation of data columns into datetime, filtering to limit the data to the time period we wanted to examine (2016), selecting the columns relevant to future analysis, changing formatting for ease of use and legibility, and serializing the data.  
 
 ![gvtables](https://user-images.githubusercontent.com/101227638/173212969-9f929078-7d69-4e7d-9d27-ecf33c029d46.png)
-
+     
 
 **Load-** 
 We then loaded the results into four Postgres Tables: FBI NICS, Incidents, Participants, and Incident URLS.  We joined FIB NICS and Incidents along the date parameter, Incidents and Participants along the IncidentID parameter, and Participants and Incidents URLS along the IncidentID parameter, as well.  
 
 ![gvpost](https://user-images.githubusercontent.com/101227638/173212929-4c309401-d093-4c8c-9908-d61b37741264.png)
+     
 
 
-
-Please “Technical Report” for a more detailed information, visuals and explanations.
+Please reference “Technical Report” for a more detailed information, visuals, and explanations.
 
 
 OurWBS was as follows:
